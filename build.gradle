@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id "io.qameta.allure" version "2.9.6"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:19.0.0'
+    testImplementation(
+            'commons-io:commons-io:2.11.0',
+            'com.opencsv:opencsv:5.5.2',
+            'org.junit.jupiter:junit-jupiter:5.8.1',
+            'com.codeborne:selenide:6.0.3',
+            'io.qameta.allure:allure-selenide:2.14.0'
+    )
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.1')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
